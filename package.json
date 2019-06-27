@@ -1,0 +1,28 @@
+{
+  "name": "@rqm/tools",
+  "description": "Tools like debounce, memoize, etc.",
+  "version": "1.0.0",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "debounce",
+    "throttle",
+    "memoize"
+  ],
+  "author": "requiemonline",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "prepublishOnly": "yarn build && copy dist\\* .",
+    "postpublish": "git clean -fd"
+  },
+  "devDependencies": {
+    "rollup": "^1.16.2",
+    "rollup-plugin-clear": "^2.0.7",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {}
+}
