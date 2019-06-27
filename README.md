@@ -43,4 +43,4 @@ otherwise
 ## Motivation
 * self education
 * convenient
-* low size compare to lodash and suchlike
+* low size compared to lodash and suchlike
