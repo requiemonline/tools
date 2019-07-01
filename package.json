@@ -1,7 +1,7 @@
 {
   "name": "@rqm/tools",
   "description": "Tools like debounce, memoize, etc.",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "main": "index.cjs.js",
   "module": "index.js",
   "homepage": "https://github.com/requiemonline/tools",
@@ -26,7 +26,7 @@
     "ts": "tsc -w",
     "lint": "eslint src/** rollup.config.js",
     "fix": "eslint src/** rollup.config.js --fix",
-    "prepublishOnly": "yarn build && copy dist\\* .",
+    "prepublishOnly": "git add . && yarn build && copy dist\\* .",
     "postpublish": "git clean -fd"
   },
   "devDependencies": {
