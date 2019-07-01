@@ -40,7 +40,7 @@ const [throttledCallback, cancel] = throttle(callback, { withCancel: true })
 Creates function that invokes passed callback and returns its result if this function invoked first time or its arguments differs with previous call arguments, otherwise its returns previous call result.
 
 ```
-import { memoize } from @rqm/tools
+import { memoize } from '@rqm/tools'
 
 const callbackMemoizingResult = memoize(callback)
 ```
@@ -48,11 +48,11 @@ const callbackMemoizingResult = memoize(callback)
 ## Importing
 If tree shaking enabled:
 ```
-import { debounce } from @rqm/tools
+import { debounce } from '@rqm/tools'
 ```
 otherwise
 ```
-import debounce from @rqm/tools/debounce
+import debounce from '@rqm/tools/debounce'
 ```
 
 
