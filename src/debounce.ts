@@ -8,18 +8,15 @@ const resetTimer = (timer: TimerT, ms: number, func: Function) => {
 
 function debounce<F extends AnyFuncT>(
 	func: F,
-	options: { ms?: number; onStart?: boolean; withCancel: true }
+	options: { ms?: number; onStart?: boolean; withCancel: true },
 ): [(...args: Parameters<F>) => void, () => void]
 
 function debounce<F extends AnyFuncT>(
 	func: F,
-	options?: Partial<typeof defOptions>
-): (...args: Parameters<F>) => void 
+	options?: Partial<typeof defOptions>,
+): (...args: Parameters<F>) => void
 
-function debounce<A extends any[]>(
-	func: (...args: A) => any, 
-	options?: Partial<typeof defOptions>
-) {
+function debounce<A extends any[]>(func: (...args: A) => any, options?: Partial<typeof defOptions>) {
 	const { ms, onStart, withCancel } = { ...defOptions, ...options }
 	let onStartExecuted = false
 	let timer: TimerT
@@ -36,12 +33,12 @@ function debounce<A extends any[]>(
 						func(...args)
 					})
 				}
-			}
-		: (...args) => { timer = resetTimer(timer, ms, () => func(...args)) }
+		  }
+		: (...args) => {
+				timer = resetTimer(timer, ms, () => func(...args))
+		  }
 
-	return withCancel 
-		? [debouncedFunc, () => clearTimeout(timer)]
-		: debouncedFunc
+	return withCancel ? [debouncedFunc, () => clearTimeout(timer)] : debouncedFunc
 }
 
 export default debounce

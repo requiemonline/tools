@@ -13,7 +13,7 @@ const plugins = [
 	typescript({
 		module: 'ESNext',
 		tsconfigOverride: { compilerOptions: { declaration: true } },
-	})
+	}),
 ]
 
 const external = [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})]
