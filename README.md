@@ -2,7 +2,7 @@
 * [Debounce](#debounce)
 * [Throttle](#throttle)
 * [Memoize](#memoize)
-* [Importing](#Importing)
+* [Importing](#importing)
 * [Motivation](#motivation)
 
 ## Debounce
