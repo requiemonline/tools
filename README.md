@@ -1,11 +1,12 @@
 # Tools
-* [Debounce](#debounce)
-* [Throttle](#throttle)
-* [Memoize](#memoize)
+* [debounce](#debounce)
+* [throttle](#throttle)
+* [memoize](#memoize)
+* [getCookie](#getcookie)
 * [Importing](#importing)
 * [Motivation](#motivation)
 
-## Debounce
+## debounce
 Creates a debounced function that delays callback invoking until after wait milliseconds have elapsed since the last time the debounced function was invoked. 
 
 ```
@@ -20,7 +21,7 @@ const debouncedCallback = debounce(callback, [, options])
 const [debouncedCallback, cancel] = debounce(callback, { withCancel: true })
 ```
 
-## Throttle
+## throttle
 Creates a throttled function that delays callback invoking until after wait milliseconds have elapsed since the last time the delayed callback was executed. 
 
 ```
@@ -36,7 +37,7 @@ const throttledCallback = throttle(callback, [, options])
 const [throttledCallback, cancel] = throttle(callback, { withCancel: true })
 ```
 
-## Memoize
+## memoize
 Creates function that invokes passed callback and returns its result if this function invoked first time or its arguments differs with previous call arguments, otherwise its returns previous call result.
 
 ```
