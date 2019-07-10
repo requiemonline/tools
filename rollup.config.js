@@ -28,7 +28,7 @@ const external = [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.pee
 // 	external
 // }
 
-const modules = ['debounce', 'throttle', 'memoize']
+const modules = ['debounce', 'throttle', 'memoize', 'getCookie']
 
 export default [
 	{
