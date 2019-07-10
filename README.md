@@ -47,10 +47,19 @@ const callbackMemoizingResult = memoize(callback)
 ```
 
 ## getCookie
+Returns cookie value or empty string on fallback
+
 ```
 import { getCookie } from '@rqm/tools'
 
 const cookieValue = getCookie(cookieName)
+```
+
+### With Typescript
+```
+type ThemeType = 'dark' | 'light'
+const theme = getCookie<ThemeType>('theme')
+// typeof theme = '' | 'dark' | 'light'
 ```
 
 ## Importing
