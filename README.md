@@ -45,6 +45,13 @@ import { memoize } from '@rqm/tools'
 const callbackMemoizingResult = memoize(callback)
 ```
 
+## getCookie
+```
+import { getCookie } from '@rqm/tools'
+
+const cookieValue = getCookie(cookieName)
+```
+
 ## Importing
 If tree shaking enabled:
 ```
