@@ -19,7 +19,16 @@ const plugins = [
 const external = [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})]
 
 // for poor fellas w/o tree shaking
-const tree = ['debounce', 'throttle', 'memoize', 'getCookie', 'spin', 'createArraySpinner']
+const tree = [
+	'debounce',
+	'throttle',
+	'memoize',
+	'getCookie',
+	'spin',
+	'createArraySpinner',
+	'createGetUniqId',
+	'lastOf',
+]
 
 export default [
 	{
