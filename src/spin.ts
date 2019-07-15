@@ -1,6 +1,3 @@
-export const spin = <A extends any[]>(arr: A, i: number) => {
-	const len = arr.length
-	return i > len ? arr[i % len] : i < 0 ? arr[len + (i % len || -len)] : arr[i]
-}
+const spin = (len: number, i: number) => (i >= len ? i % len : i < 0 ? len + (i % len || -len) : i)
 
-export const createArraySpinner = <A extends any[]>(arr: A) => new Proxy(arr, { get: spin })
+export default spin

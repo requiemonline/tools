@@ -3,6 +3,8 @@
 * [throttle](#throttle)
 * [memoize](#memoize)
 * [getCookie](#getcookie)
+* [spin](#spin)
+* [createArraySpinner](#createarrayspinner)
 * [Importing](#importing)
 * [Motivation](#motivation)
 
@@ -60,6 +62,33 @@ const cookieValue = getCookie(cookieName)
 type ThemeType = 'dark' | 'light'
 const theme = getCookie<ThemeType>('theme')
 // typeof theme = '' | 'dark' | 'light'
+```
+
+## spin
+Accepts array length as first parameter and index as second. Index can be *any* number. It's not matter whether it fits default array index restrictions (`0 <= index < array.length`) or not.
+When given index passed this restrictions, `spin` returns index itself, otherwise it'll be index divided with modulo `array.length % index` if index isn't negative. For negative index computations is more complicated, but similar: `array[spin(array, -1)] === array[array.length -1]`.
+Abstraction for this can be the wheel with array items reeled up on it. You spin it too much or in wrong direction and still get index with valid value.
+
+```
+import { spin } from '@rqm/tools'
+
+const arr = ['a', 'b', 'c']
+const len = arr.length
+arr[spin(len, 3)]   // "a"
+arr[spin(len, 30)]  // "a"
+arr[spin(len, -30)] // "a"
+arr[spin(len, -31)] // "c"
+arr[spin(len, -1)]  // "c"
+```
+
+## createArraySpinner
+Returns passed array wrapped with Proxy that uses [spin](#spin) for getting array items:
+```
+import { createArraySpinner } from '@rqm/tools'
+
+const arr = ['a', 'b', 'c']
+const arrSpinner = createArraySpinner(arr)
+arrSpinner[-1] // 'c'
 ```
 
 ## Importing
