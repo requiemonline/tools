@@ -18,17 +18,8 @@ const plugins = [
 
 const external = [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})]
 
-// export default {
-// 	input: `src/index.ts`,
-//	 output: [
-//	 	{ file: pkg.main, format: 'cjs', name: 'tools' },
-//	 	{ file: pkg.module, format: 'esm', name: 'tools' },
-//	 ],
-// 	plugins: [...firstPlugins, ...plugins],
-// 	external
-// }
-
-const modules = ['debounce', 'throttle', 'memoize', 'getCookie']
+// for poor fellas w/o tree shaking
+const tree = ['debounce', 'throttle', 'memoize', 'getCookie', 'spin']
 
 export default [
 	{
@@ -41,9 +32,9 @@ export default [
 		external,
 	},
 ].concat(
-	modules.map(module => ({
-		input: `src/${module}.ts`,
-		output: [{ file: `dist/${module}.js`, format: 'cjs', name: module }],
+	tree.map(fruit => ({
+		input: `src/${fruit}.ts`,
+		output: [{ file: `dist/${fruit}.js`, format: 'cjs', name: fruit }],
 		plugins,
 		external,
 	})),
