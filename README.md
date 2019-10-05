@@ -115,3 +115,10 @@ const arr = ['a', 'b', 'c']
 const lastItem = lastOf(arr) // 'c'
 lastOf([]) // undefined
 ```
+
+## range
+returns array with the numbers from 0 to n
+```js
+const arr = range(3)
+// ['0', '1', '2']
+```

@@ -28,6 +28,7 @@ const tree = [
 	'createArraySpinner',
 	'createGetUniqId',
 	'lastOf',
+	'range',
 ]
 
 export default [
